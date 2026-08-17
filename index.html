@@ -1,10 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Plate Restaurant</title>
+
+  <title>Golden Plate Restaurant | Delicious Food & Great Moments</title>
+
+  <meta name="description" content="Golden Plate Restaurant - Fresh ingredients, delicious meals and great moments. Order your favorite meals today.">
 
   <style>
     * {
@@ -14,112 +16,285 @@
       scroll-behavior: smooth;
     }
 
+    :root {
+      --gold: #f5b942;
+      --dark: #151515;
+      --dark2: #222;
+      --cream: #fffaf0;
+      --white: #ffffff;
+      --text: #333;
+      --green: #25d366;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #fffaf2;
+      color: var(--text);
+      background: var(--cream);
       line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
     header {
-      background: #171717;
-      color: white;
-      padding: 20px;
-      text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      background: rgba(21, 21, 21, 0.97);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.25);
     }
 
-    header h1 {
-      color: #f7b733;
-      margin-bottom: 10px;
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
     }
 
     nav a {
       color: white;
-      text-decoration: none;
-      margin: 0 12px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #f7b733;
+      color: var(--gold);
     }
 
+    .nav-order {
+      background: var(--gold);
+      color: #111;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+
+    .nav-order:hover {
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
     .hero {
-      min-height: 600px;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
-      padding: 40px 20px;
+
       background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80")
+        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.65)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
         center/cover;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 850px;
+      padding: 30px;
+      animation: fadeUp 1s ease;
     }
 
-    .hero h2 {
-      font-size: 52px;
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
       margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
     }
 
     .hero p {
       font-size: 20px;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 auto 30px;
     }
 
-    .button {
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
       display: inline-block;
-      padding: 14px 25px;
-      border-radius: 8px;
-      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 30px;
       font-weight: bold;
-      margin: 5px;
+      transition: 0.3s;
       cursor: pointer;
-      border: none;
-      font-size: 16px;
     }
 
-    .primary {
-      background: #f7b733;
-      color: #171717;
+    .btn-gold {
+      background: var(--gold);
+      color: #111;
     }
 
-    .secondary {
-      background: white;
-      color: #171717;
+    .btn-gold:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(245,185,66,0.35);
     }
 
-    .whatsapp {
-      background: #25d366;
+    .btn-outline {
+      border: 2px solid white;
       color: white;
     }
 
+    .btn-outline:hover {
+      background: white;
+      color: #111;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
     section {
-      padding: 70px 20px;
-      max-width: 1100px;
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .section-title h2 {
-      font-size: 36px;
-      color: #222;
+      font-size: 40px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--gold);
     }
 
     .section-title p {
       color: #666;
+    }
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .features {
+      background: white;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 15px;
+      background: #fffaf0;
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .feature-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image img {
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .about-text h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 span {
+      color: var(--gold);
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #555;
+    }
+
+    .about-list {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .about-list li {
+      margin: 12px 0;
+      font-weight: bold;
+    }
+
+    /* =========================
+       MENU
+    ========================== */
+
+    .menu {
+      background: white;
     }
 
     .menu-grid {
@@ -128,96 +303,374 @@
       gap: 25px;
     }
 
-    .menu-item {
+    .menu-card {
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      border: 1px solid #eee;
     }
 
-    .menu-item h3 {
-      color: #c88700;
+    .menu-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .menu-card img {
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .menu-info {
+      padding: 22px;
+    }
+
+    .menu-info h3 {
+      color: var(--dark);
+      font-size: 22px;
       margin-bottom: 8px;
     }
 
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 15px 0;
+    .menu-info p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
-    .about {
-      background: #171717;
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      color: #c98b13;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .order-small {
+      background: var(--green);
       color: white;
-      max-width: none;
+      padding: 9px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .order-small:hover {
+      background: #1ebc59;
+    }
+
+    /* =========================
+       SPECIAL OFFER
+    ========================== */
+
+    .offer {
+      background:
+        linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
       text-align: center;
     }
 
-    .about-content {
-      max-width: 800px;
-      margin: auto;
+    .offer h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
     }
 
-    .contact-box {
+    .offer h2 span {
+      color: var(--gold);
+    }
+
+    .offer p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
 
-    .info {
+    .contact-card {
       background: white;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
     }
 
-    form {
+    .contact-card h3 {
+      color: var(--dark);
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .contact-item {
+      margin: 18px 0;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      font-size: 25px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--dark);
+    }
+
+    .contact-item a {
+      color: #555;
+    }
+
+    .contact-item a:hover {
+      color: var(--gold);
+    }
+
+    /* =========================
+       LOCATION
+    ========================== */
+
+    .location {
       background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.08);
     }
 
-    input, textarea, select {
-      width: 100%;
-      padding: 13px;
-      margin: 8px 0 15px;
-      border: 1px solid #ddd;
-      border-radius: 7px;
-      font-size: 15px;
+    .location-box {
+      background: var(--dark);
+      color: white;
+      padding: 45px;
+      border-radius: 20px;
+      text-align: center;
     }
 
-    textarea {
-      min-height: 100px;
-      resize: vertical;
+    .location-box h2 {
+      color: var(--gold);
+      margin-bottom: 15px;
     }
+
+    .location-box p {
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      background: var(--gold);
+      text-align: center;
+      color: #111;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      margin-bottom: 25px;
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      background: #111;
-      color: white;
+      background: #101010;
+      color: #aaa;
+      padding: 45px 20px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #333;
       text-align: center;
-      padding: 30px 20px;
+      font-size: 14px;
     }
 
-    footer span {
-      color: #f7b733;
+    /* =========================
+       FLOATING WHATSAPP
+    ========================== */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      background: var(--green);
+      color: white;
+      padding: 14px 20px;
+      border-radius: 40px;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      transition: 0.3s;
     }
 
-    @media (max-width: 800px) {
-      .hero h2 {
-        font-size: 38px;
+    .whatsapp:hover {
+      transform: scale(1.05);
+    }
+
+    /* =========================
+       ANIMATION
+    ========================== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
 
-      .menu-grid {
-        grid-template-columns: 1fr;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
       }
 
-      .contact-box {
-        grid-template-columns: 1fr;
+      nav {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       nav a {
-        margin: 0 5px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .feature-grid,
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      section {
+        padding: 60px 15px;
+      }
+
+      .logo {
+        font-size: 26px;
+      }
+
+      nav {
+        gap: 9px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .nav-order {
+        padding: 8px 12px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title h2,
+      .about-text h2,
+      .cta h2 {
+        font-size: 32px;
+      }
+
+      .feature-grid,
+      .menu-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image img {
+        height: 350px;
+      }
+
+      .location-box {
+        padding: 30px 20px;
+      }
+
+      .whatsapp {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 16px;
         font-size: 14px;
       }
     }
@@ -226,238 +679,763 @@
 
 <body>
 
-  <header>
-    <h1>Golden Plate</h1>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header>
+    <div class="nav-container">
+
+      <a href="#home" class="logo">
+        Golden Plate
+      </a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#location">Location</a>
+        <a href="#menu" class="nav-order">Order Now</a>
+      </nav>
+
+    </div>
   </header>
 
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <section class="hero" id="home">
+
     <div class="hero-content">
-      <h2>Good Food. Great Moments.</h2>
+
+      <h1>
+        Good Food.<br>
+        <span>Great Moments.</span>
+      </h1>
 
       <p>
         Fresh ingredients, delicious meals and a warm atmosphere
         for you, your family and friends.
       </p>
 
-      <a class="button primary" href="#menu">View Our Menu</a>
+      <div class="buttons">
 
-      <a class="button secondary" href="#contact">Book a Table</a>
+        <a href="#menu" class="btn btn-gold">
+          View Our Menu
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Contact Us
+        </a>
+
+      </div>
+
     </div>
+
   </section>
 
-  <section id="menu">
 
-    <div class="section-title">
-      <h2>Our Menu</h2>
-      <p>Freshly prepared favorites made with quality ingredients.</p>
-    </div>
+  <!-- =========================
+       FEATURES
+  ========================== -->
 
-    <div class="menu-grid">
+  <section class="features">
 
-      <div class="menu-item">
-        <h3>Grilled Chicken</h3>
-        <p>Juicy grilled chicken served with vegetables and fries.</p>
-        <div class="price">₦8,500</div>
+    <div class="container">
 
-        <a class="button whatsapp"
-           href="https://wa.me/?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20Grilled%20Chicken."
-           target="_blank">
-          Order
-        </a>
-      </div>
+      <div class="feature-grid">
 
-      <div class="menu-item">
-        <h3>Golden Burger</h3>
-        <p>Beef burger with fresh lettuce, tomato and special sauce.</p>
-        <div class="price">₦7,500</div>
+        <div class="feature">
+          <div class="feature-icon">🍽️</div>
+          <h3>Fresh Food</h3>
+          <p>
+            We prepare our meals using quality ingredients
+            for delicious flavor.
+          </p>
+        </div>
 
-        <a class="button whatsapp"
-           href="https://wa.me/?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20a%20Golden%20Burger."
-           target="_blank">
-          Order
-        </a>
-      </div>
+        <div class="feature">
+          <div class="feature-icon">👨‍🍳</div>
+          <h3>Expert Chefs</h3>
+          <p>
+            Our meals are prepared with care and attention
+            to every detail.
+          </p>
+        </div>
 
-      <div class="menu-item">
-        <h3>Jollof Rice Special</h3>
-        <p>Delicious Nigerian jollof rice served with chicken and plantain.</p>
-        <div class="price">₦6,500</div>
+        <div class="feature">
+          <div class="feature-icon">❤️</div>
+          <h3>Made With Love</h3>
+          <p>
+            Great food, friendly service and an experience
+            you will remember.
+          </p>
+        </div>
 
-        <a class="button whatsapp"
-           href="https://wa.me/?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20Jollof%20Rice%20Special."
-           target="_blank">
-          Order
-        </a>
-      </div>
-
-      <div class="menu-item">
-        <h3>Fried Rice & Chicken</h3>
-        <p>Special fried rice served with tasty grilled chicken.</p>
-        <div class="price">₦7,000</div>
-
-        <a class="button whatsapp"
-           href="https://wa.me/?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20Fried%20Rice%20and%20Chicken."
-           target="_blank">
-          Order
-        </a>
-      </div>
-
-      <div class="menu-item">
-        <h3>Beef Suya</h3>
-        <p>Spicy grilled beef suya served with onions and pepper.</p>
-        <div class="price">₦5,500</div>
-
-        <a class="button whatsapp"
-           href="https://wa.me/?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20Beef%20Suya."
-           target="_blank">
-          Order
-        </a>
-      </div>
-
-      <div class="menu-item">
-        <h3>Fresh Fruit Juice</h3>
-        <p>Refreshing freshly prepared fruit juice.</p>
-        <div class="price">₦3,000</div>
-
-        <a class="button whatsapp"
-           href="https://wa.me/?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20Fresh%20Fruit%20Juice."
-           target="_blank">
-          Order
-        </a>
       </div>
 
     </div>
+
   </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
 
   <section class="about" id="about">
 
-    <div class="about-content">
-      <div class="section-title">
-        <h2 style="color:white;">About Golden Plate</h2>
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
+            alt="Restaurant dining area"
+          >
+
+        </div>
+
+        <div class="about-text">
+
+          <h2>
+            Welcome to <span>Golden Plate</span>
+          </h2>
+
+          <p>
+            Golden Plate is a restaurant created around one simple idea:
+            good food should bring people together.
+          </p>
+
+          <p>
+            From delicious burgers and grilled chicken to refreshing
+            drinks and tasty sides, we prepare every meal with quality
+            ingredients and attention to detail.
+          </p>
+
+          <p>
+            Whether you are having lunch with friends, enjoying dinner
+            with family or simply treating yourself, we are ready to
+            serve you.
+          </p>
+
+          <ul class="about-list">
+
+            <li>✓ Fresh ingredients</li>
+            <li>✓ Delicious meals</li>
+            <li>✓ Friendly service</li>
+            <li>✓ Comfortable atmosphere</li>
+
+          </ul>
+
+          <a href="#menu" class="btn btn-gold">
+            Explore Our Menu
+          </a>
+
+        </div>
+
       </div>
 
-      <p>
-        Golden Plate is a modern restaurant focused on delicious food,
-        excellent service and memorable experiences.
-      </p>
-
-      <p style="margin-top:15px;">
-        Whether you are enjoying dinner with family, meeting friends,
-        or celebrating a special occasion, we are ready to welcome you.
-      </p>
     </div>
 
   </section>
 
-  <section id="contact">
 
-    <div class="section-title">
-      <h2>Contact & Reservations</h2>
-      <p>Book your table or contact us today.</p>
-    </div>
+  <!-- =========================
+       MENU
+  ========================== -->
 
-    <div class="contact-box">
+  <section class="menu" id="menu">
 
-      <div class="info">
+    <div class="container">
 
-        <h3>Visit Us</h3>
+      <div class="section-title">
 
-        <p>📍 123 Main Street, Lagos</p>
-        <p>📞 +234 800 000 0000</p>
-        <p>📧 hello@goldenplate.com</p>
+        <h2>
+          Our <span>Menu</span>
+        </h2>
 
-        <p style="margin-top:20px;">
-          Monday - Sunday<br>
-          11:00 AM - 10:00 PM
+        <p>
+          Freshly prepared favorites made with quality ingredients.
         </p>
 
-        <br>
+      </div>
 
-        <a class="button whatsapp"
-           href="https://wa.me/?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20make%20an%20inquiry."
-           target="_blank">
-          WhatsApp Us
+
+      <div class="menu-grid">
+
+
+        <!-- ITEM 1 -->
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+            alt="Golden Burger"
+          >
+
+          <div class="menu-info">
+
+            <h3>Golden Burger</h3>
+
+            <p>
+              Juicy beef burger with fresh lettuce, tomato,
+              cheese and special sauce.
+            </p>
+
+            <div class="price-row">
+
+              <span class="price">₦12,000</span>
+
+              <a
+                class="order-small"
+                href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20the%20Golden%20Burger."
+                target="_blank"
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM 2 -->
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85"
+            alt="Grilled Chicken"
+          >
+
+          <div class="menu-info">
+
+            <h3>Grilled Chicken</h3>
+
+            <p>
+              Tender grilled chicken served with vegetables,
+              fries and our signature sauce.
+            </p>
+
+            <div class="price-row">
+
+              <span class="price">₦15,000</span>
+
+              <a
+                class="order-small"
+                href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20the%20Grilled%20Chicken."
+                target="_blank"
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM 3 -->
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85"
+            alt="Special Pizza"
+          >
+
+          <div class="menu-info">
+
+            <h3>Golden Pizza</h3>
+
+            <p>
+              Hot cheesy pizza topped with fresh vegetables
+              and delicious toppings.
+            </p>
+
+            <div class="price-row">
+
+              <span class="price">₦18,000</span>
+
+              <a
+                class="order-small"
+                href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20the%20Golden%20Pizza."
+                target="_blank"
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM 4 -->
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+            alt="Pasta"
+          >
+
+          <div class="menu-info">
+
+            <h3>Creamy Pasta</h3>
+
+            <p>
+              Creamy pasta prepared with herbs, vegetables
+              and our special house sauce.
+            </p>
+
+            <div class="price-row">
+
+              <span class="price">₦13,500</span>
+
+              <a
+                class="order-small"
+                href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20the%20Creamy%20Pasta."
+                target="_blank"
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM 5 -->
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"
+            alt="Steak"
+          >
+
+          <div class="menu-info">
+
+            <h3>Golden Steak</h3>
+
+            <p>
+              Tender and flavorful steak served with fresh
+              vegetables and fries.
+            </p>
+
+            <div class="price-row">
+
+              <span class="price">₦22,000</span>
+
+              <a
+                class="order-small"
+                href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20the%20Golden%20Steak."
+                target="_blank"
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM 6 -->
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85"
+            alt="Fresh Drink"
+          >
+
+          <div class="menu-info">
+
+            <h3>Fresh Fruit Drink</h3>
+
+            <p>
+              A refreshing blend of fresh fruits served chilled.
+            </p>
+
+            <div class="price-row">
+
+              <span class="price">₦4,500</span>
+
+              <a
+                class="order-small"
+                href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20order%20the%20Fresh%20Fruit%20Drink."
+                target="_blank"
+              >
+                Order
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SPECIAL OFFER
+  ========================== -->
+
+  <section class="offer">
+
+    <div class="container">
+
+      <h2>
+        Hungry? Let's <span>Fix That.</span>
+      </h2>
+
+      <p>
+        Order your favorite meal today and enjoy delicious food
+        prepared fresh for you.
+      </p>
+
+      <a
+        href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20place%20an%20order."
+        target="_blank"
+        class="btn btn-gold"
+      >
+        Order on WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Contact <span>Us</span>
+        </h2>
+
+        <p>
+          Have a question or want to place an order?
+          We would love to hear from you.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+
+        <div class="contact-card">
+
+          <h3>Get In Touch</h3>
+
+          <!-- CHANGE THESE DETAILS -->
+
+          <div class="contact-item">
+
+            <div class="contact-icon">📞</div>
+
+            <div>
+
+              <strong>Phone</strong>
+
+              <a href="tel:+2348012345678">
+                +234 801 234 5678
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <div class="contact-icon">💬</div>
+
+            <div>
+
+              <strong>WhatsApp</strong>
+
+              <a
+                href="https://wa.me/2348012345678"
+                target="_blank"
+              >
+                Chat with us on WhatsApp
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <div class="contact-icon">✉️</div>
+
+            <div>
+
+              <strong>Email</strong>
+
+              <a href="mailto:hello@goldenplate.com">
+                hello@goldenplate.com
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <div class="contact-icon">🕒</div>
+
+            <div>
+
+              <strong>Opening Hours</strong>
+
+              Monday - Sunday<br>
+              11:00 AM - 10:00 PM
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>Order Directly</h3>
+
+          <p>
+            The fastest way to order your favorite Golden Plate
+            meal is through WhatsApp.
+          </p>
+
+          <br>
+
+          <a
+            href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20place%20an%20order."
+            target="_blank"
+            class="btn btn-gold"
+          >
+            💬 Start WhatsApp Order
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LOCATION
+  ========================== -->
+
+  <section class="location" id="location">
+
+    <div class="container">
+
+      <div class="location-box">
+
+        <h2>📍 Visit Golden Plate</h2>
+
+        <!-- CHANGE THE ADDRESS -->
+
+        <p>
+          123 Main Street, Lagos, Nigeria
+        </p>
+
+        <p>
+          We are open every day from 11:00 AM to 10:00 PM.
+        </p>
+
+        <!-- CHANGE GOOGLE MAPS LINK -->
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Golden+Plate+Restaurant+Lagos"
+          target="_blank"
+          class="btn btn-gold"
+        >
+          Open in Google Maps
         </a>
 
       </div>
 
-      <form onsubmit="bookTable(event)">
+    </div>
 
-        <h3>Book a Table</h3>
+  </section>
 
-        <input type="text" id="name" placeholder="Your name" required>
 
-        <input type="tel" id="phone" placeholder="Phone number" required>
+  <!-- =========================
+       FINAL CTA
+  ========================== -->
 
-        <input type="date" id="date" required>
+  <section class="cta">
 
-        <input type="time" id="time" required>
+    <div class="container">
 
-        <select id="guests" required>
-          <option value="">Number of guests</option>
-          <option>1 person</option>
-          <option>2 people</option>
-          <option>3 people</option>
-          <option>4 people</option>
-          <option>5 people</option>
-          <option>6+ people</option>
-        </select>
+      <h2>Ready for a Great Meal?</h2>
 
-        <textarea id="message"
-          placeholder="Special request (optional)"></textarea>
+      <p>
+        Delicious food is just one message away.
+      </p>
 
-        <button class="button primary" type="submit">
-          Request Reservation
-        </button>
-
-      </form>
+      <a
+        href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20want%20to%20place%20an%20order."
+        target="_blank"
+        class="btn btn-dark"
+      >
+        Order Now on WhatsApp
+      </a>
 
     </div>
 
   </section>
 
-  <footer>
-    <p>
-      © 2026 <span>Golden Plate</span>. All Rights Reserved.
-    </p>
 
-    <p>
-      Restaurant Website Demo
-    </p>
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>Golden Plate</h3>
+
+        <p>
+          Good food. Great moments.
+        </p>
+
+        <p>
+          Fresh ingredients and delicious meals
+          served with care.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Quick Links</h3>
+
+        <p><a href="#home">Home</a></p>
+        <p><a href="#menu">Menu</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#contact">Contact</a></p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Contact</h3>
+
+        <p>📞 +234 801 234 5678</p>
+        <p>📍 Lagos, Nigeria</p>
+        <p>🕒 11 AM - 10 PM</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 Golden Plate Restaurant.
+      All rights reserved.
+
+    </div>
+
   </footer>
 
+
+  <!-- =========================
+       FLOATING WHATSAPP
+  ========================== -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/2348012345678?text=Hello%20Golden%20Plate,%20I%20would%20like%20to%20place%20an%20order."
+    target="_blank"
+  >
+    💬 WhatsApp Order
+  </a>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
-    function bookTable(event) {
-      event.preventDefault();
 
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const date = document.getElementById("date").value;
-      const time = document.getElementById("time").value;
-      const guests = document.getElementById("guests").value;
-      const message = document.getElementById("message").value;
+    // Show a small message when a menu order button is clicked.
+    const orderButtons = document.querySelectorAll(".order-small");
 
-      const text =
-        "Hello Golden Plate!%0A%0A" +
-        "I would like to book a table.%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Phone: " + encodeURIComponent(phone) + "%0A" +
-        "Date: " + encodeURIComponent(date) + "%0A" +
-        "Time: " + encodeURIComponent(time) + "%0A" +
-        "Guests: " + encodeURIComponent(guests) + "%0A" +
-        "Special request: " + encodeURIComponent(message);
+    orderButtons.forEach(button => {
 
-      window.open("https://wa.me/?text=" + text, "_blank");
-    }
+      button.addEventListener("click", function() {
+
+        console.log("Opening WhatsApp order...");
+
+      });
+
+    });
+
+
+    // Add a simple scroll effect to the header.
+    window.addEventListener("scroll", function() {
+
+      const header = document.querySelector("header");
+
+      if (window.scrollY > 50) {
+
+        header.style.boxShadow =
+          "0 5px 20px rgba(0,0,0,0.35)";
+
+      } else {
+
+        header.style.boxShadow =
+          "0 3px 15px rgba(0,0,0,0.25)";
+
+      }
+
+    });
+
   </script>
 
 </body>
-</html>
-``` 
+</html> 
